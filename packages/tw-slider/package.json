@@ -1,0 +1,23 @@
+{
+  "name": "@ds/tw-slider",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "style": "./dist/index.css", 
+  "sideEffects": false,
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react --tsconfig tsconfig.json --treeshake"
+  },
+  "dependencies": {
+    "@radix-ui/react-slider": "^1.1.2"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "tsup": "^7.2.0",
+    "typescript": "^5.0.0"
+  }
+} 

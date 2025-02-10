@@ -1,0 +1,20 @@
+{
+  "name": "seyon",
+  "private": true,
+  "version": "1.0.0",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+ "scripts": {
+    "dev": "pnpm --filter @ds/web dev",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.2",
+    "@types/react": "^18.2.25",
+    "@types/react-dom": "^18.2.10",
+    "typescript": "^5.0.0"
+  }
+}

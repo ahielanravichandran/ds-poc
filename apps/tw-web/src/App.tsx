@@ -6,12 +6,14 @@ import {
   DialogTitle,
 } from "@ds/tw-dialog";
 import { Slider } from "@ds/tw-slider";
+import { Slider as SliderV1 } from "@ds/tw-slider/v1";
 import { useState } from "react";
 import "@ds/tw-slider/dist/index.css";
 
 function App() {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState([50]);
+  const [valueV1, setValueV1] = useState([50]);
 
   return (
     <div>
@@ -31,8 +33,8 @@ function App() {
       <div>
         <div
           style={{
-            position: "relative",
             display: "flex",
+            gap: "20px",
             alignItems: "center",
             WebkitUserSelect: "none",
             userSelect: "none",
@@ -42,6 +44,12 @@ function App() {
           }}
         >
           <Slider value={value} onValueChange={setValue} max={100} step={1} />
+          <SliderV1
+            value={valueV1}
+            onValueChange={setValueV1}
+            max={100}
+            step={1}
+          />
         </div>
         <p>Value: {value}</p>
       </div>

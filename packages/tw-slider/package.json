@@ -1,23 +1,48 @@
 {
   "name": "@ds/tw-slider",
-  "version": "1.0.0",
+  "version": "2.0.0",
+  "private": true,
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./dist/index.css": "./dist/index.css",
+    "./styles.css": "./dist/styles.css",
+    "./v1": {
+      "import": "./dist/v1.mjs",
+      "require": "./dist/v1.js",
+      "types": "./dist/v1.d.ts"
+    }
+  },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "style": "./dist/index.css", 
   "sideEffects": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "tsup src/index.tsx --format esm,cjs --dts --external react --tsconfig tsconfig.json --treeshake"
+    "build": "tsup && npx postcss src/styles.css -o dist/index.css",
+    "dev": "tsup --watch & npx postcss src/styles.css -o dist/index.css --watch"
   },
   "dependencies": {
-    "@radix-ui/react-slider": "^1.1.2"
+    "@radix-ui/react-slider": "^1.1.2",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "tailwind-merge": "^2.0.0"
   },
   "peerDependencies": {
-    "react": "^18.2.0"
+    "react": ">=18.0.0"
   },
   "devDependencies": {
+    "postcss": "^8.4.31",
+    "postcss-cli": "^10.1.0",
+    "tailwindcss": "^3.3.5",
+    "autoprefixer": "^10.4.16",
     "tsup": "^7.2.0",
+    "@types/react": "^18.2.0",
     "typescript": "^5.0.0"
   }
-} 
+}

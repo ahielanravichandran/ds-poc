@@ -1,16 +1,11 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "ESNext",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "outDir": "./dist",
+    "rootDir": "./src",
     "jsx": "react-jsx",
-    "moduleResolution": "node",
-    "strict": true,
-    "outDir": "dist",
-    "declaration": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true
+    "moduleResolution": "node"
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["src/**/*.css", "dist", "node_modules"]
 }
